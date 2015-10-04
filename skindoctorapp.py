@@ -5,7 +5,7 @@ from werkzeug import secure_filename
 
 app = Flask(__name__)
 app.config.from_pyfile('SkinDoc.cfg')
-UPLOAD_FOLDER = os.environ['OPENSHIFT_REPO_DIR'] + "/Uploads"
+UPLOAD_FOLDER = os.environ['OPENSHIFT_REPO_DIR'] + "Uploads"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
