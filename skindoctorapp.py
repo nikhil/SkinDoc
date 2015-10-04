@@ -7,6 +7,10 @@ app.config.from_pyfile('SkinDoc.cfg')
 UPLOAD_FOLDER = os.environ['OPENSHIFT_REPO_DIR'] + "/Uploads"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
 @app.route('/',methods=['GET'])
 def index():
     return render_template("index.html")
