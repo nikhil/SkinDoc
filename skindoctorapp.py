@@ -1,5 +1,6 @@
 import os
-
+from flask import Flask, request, flash, url_for, redirect, \
+     render_template, abort, send_from_directory
 
 app = Flask(__name__)
 app.config.from_pyfile('SkinDoc.cfg')
